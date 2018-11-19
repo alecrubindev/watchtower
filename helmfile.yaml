@@ -19,7 +19,7 @@ releases:
     chart: weaveworks/flux
     values:
       - git:
-          url: ssh://git@github.com:alecrubindev/watchtower
+          url: git@github.com:alecrubindev/watchtower
         helmOperator:
           create: true
           git:
