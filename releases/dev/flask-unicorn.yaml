@@ -33,6 +33,7 @@ spec:
         kubernetes.io/ingress.class: nginx
         kubernetes.io/tls-acme: "true"
         certmanager.k8s.io/cluster-issuer: "letsencrypt-prod"
+        nginx.ingress.kubernetes.io/rewrite-target: /
       path: /dev
       hosts:
         - flask.kuber.me
