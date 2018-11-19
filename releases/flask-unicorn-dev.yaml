@@ -17,7 +17,7 @@ spec:
     replicaCount: 2
     image:
       repository: us.gcr.io/kuber-221407/flask-sample-one
-      tag: 9d0262b
+      tag: 3aa310d
       pullPolicy: Always
 
     nameOverride: ""
@@ -35,8 +35,8 @@ spec:
         certmanager.k8s.io/cluster-issuer: "letsencrypt-prod"
       path: /
       hosts:
-        - dev-flask.kuber.me
+      - dev-flask.kuber.me
       tls:
-        - secretName: letsencrypt-prod
-          hosts:
-            - dev-flask.kuber.me
+      - secretName: letsencrypt-prod
+        hosts:
+        - dev-flask.kuber.me
