@@ -9,7 +9,7 @@ metadata:
 spec:
   releaseName: podinfo-dev
   chart:
-    git: git@github.com:alecrubin/watchtower
+    git: git@github.com:alecrubindev/watchtower
     path: charts/podinfo
     ref: master
   values:
