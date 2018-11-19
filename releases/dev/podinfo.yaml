@@ -10,5 +10,5 @@ spec:
   releaseName: podinfo-dev
   chartGitPath: podinfo
   values:
-    image: alecrubin/podinfo:dev-k5obbmgw
+    image: alecrubin/podinfo:dev-syprhxnw
     replicaCount: 1
