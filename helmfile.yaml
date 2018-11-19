@@ -21,5 +21,6 @@ releases:
       - git:
           url: ssh://git@github.com:alecrubindev/watchtower
         helmOperator:
+          create: true
           git:
             chartsPath: charts
