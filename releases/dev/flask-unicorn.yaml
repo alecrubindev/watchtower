@@ -10,7 +10,7 @@ metadata:
 spec:
   releaseName: flask-unicorn-dev
   chart:
-    repository: https://kubernetes-charts.storage.googleapis.com/
+    repository: https://kuber-charts.storage.googleapis.com/
     name: flask-unicorn
     version: 0.1.0
   values:
