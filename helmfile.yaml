@@ -18,10 +18,8 @@ releases:
     namespace: flux
     chart: weaveworks/flux
     values:
-      - rbac:
-          create: true
-        helmOperator:
-          create: true
-        git:
+      - git:
           url: ssh://git@github.com:alecrubindev/watchtower
-          chartsPath: charts
+        helmOperator:
+          git:
+            chartsPath: charts
