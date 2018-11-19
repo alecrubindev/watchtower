@@ -28,7 +28,9 @@ releases:
 
   - name: podinfo-dev
     namespace: dev
-    chart: ./charts/podinfo
+    chart: ./charts/podinfo-v1
     values:
-      - image: alecrubin/podinfo:dev-syprhxnw
+      - image:
+          repository: alecrubin/podinfo
+          tag: dev-syprhxnw
         replicaCount: 1
