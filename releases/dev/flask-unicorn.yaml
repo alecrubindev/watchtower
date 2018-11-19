@@ -1,0 +1,42 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: flask-unicorn-dev
+  namespace: dev
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:*
+spec:
+  releaseName: flask-unicorn-dev
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    name: mongodb
+    version: 0.1.0
+  values:
+    replicaCount: 2
+    image:
+      repository: us.gcr.io/kuber-221407/flask-sample-one
+      tag: d4ecb9a
+      pullPolicy: IfNotPresent
+
+    nameOverride: ""
+    fullnameOverride: ""
+
+    service:
+      type: ClusterIP
+      port: 80
+
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
+        kubernetes.io/tls-acme: "true"
+        certmanager.k8s.io/cluster-issuer: "letsencrypt-prod"
+      path: /dev
+      hosts:
+        - flask.kuber.me
+      tls:
+        - secretName: letsencrypt-prod
+          hosts:
+            - flask.kuber.me
