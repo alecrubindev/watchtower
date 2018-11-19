@@ -1,0 +1,25 @@
+repositories:
+  - name: stable
+    url: https://kubernetes-charts.storage.googleapis.com
+  - name: kuber-charts
+    url: https://kuber-charts.storage.googleapis.com
+  - name: weaveworks
+    url: https://weaveworks.github.io/flux
+
+context: gke_kuber-221407_us-central1-c_watchtower
+
+helmDefaults:
+  kubeContext: gke_kuber-221407_us-central1-c_watchtower
+  recreatePods: true
+  force: true
+
+releases:
+  - name: flux
+    namespace: flux
+    set:
+      - rbac.create: true
+      - helmOperator.create: true
+      - git.url: git@github.com:alecrubindev/watchtower
+    namespace: kube-system
+    chart: weaveworks/flux
+    version: ~0.5.0
