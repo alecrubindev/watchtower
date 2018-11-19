@@ -20,4 +20,5 @@ releases:
     values:
       - rbac.create: true
       - helmOperator.create: true
-      - git.url: git@github.com:alecrubindev/watchtower
+      - git.url: ssh://git@github.com:alecrubindev/watchtower
+      - git.chartsPath: charts

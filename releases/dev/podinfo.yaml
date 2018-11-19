@@ -1,17 +1,16 @@
-apiVersion: flux.weave.works/v1beta1
-kind: HelmRelease
+apiVersion: helm.integrations.flux.weave.works/v1alpha2
+kind: FluxHelmRelease
 metadata:
   name: podinfo-dev
   namespace: dev
+  labels:
+    chart: podinfo
   annotations:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.chart-image: glob:dev-*
 spec:
+  chartGitPath: podinfo
   releaseName: podinfo-dev
-  chart:
-    git: git@github.com:alecrubindev/watchtower
-    path: charts/podinfo
-    ref: master
   values:
-    image: alecrubin/podinfo:dev-kb9lm91e
+    image: stefanprodan/podinfo:dev-kb9lm91e
     replicaCount: 1
