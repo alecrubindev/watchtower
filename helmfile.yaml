@@ -25,12 +25,3 @@ releases:
         git:
           url: ssh://git@github.com:alecrubindev/watchtower
           chartsPath: charts
-
-  - name: podinfo-dev
-    namespace: dev
-    chart: ./charts/podinfo-v1
-    values:
-      - image:
-          repository: alecrubin/podinfo
-          tag: dev-syprhxnw
-        replicaCount: 1

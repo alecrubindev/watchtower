@@ -16,5 +16,4 @@ spec:
   values:
     image:
       repository: alecrubin/podinfo
-      tag: dev-syprhxnw
     replicaCount: 1
