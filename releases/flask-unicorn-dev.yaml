@@ -17,7 +17,7 @@ spec:
     replicaCount: 2
     image:
       repository: us.gcr.io/kuber-221407/flask-sample-one
-      tag: 3c47d78
+      tag: d821745
       pullPolicy: Always
 
     nameOverride: ""
